@@ -7,7 +7,7 @@ export default function Home()
         const name = document.getElementById('name').value
         const email = document.getElementById('mail').value
         const data={name,email}
- const post = await axios.post('http://localhost:8000/addUser',data,{
+ const post = await axios.post('https://demo-hosting-6snt.onrender.com/addUser',data,{
     headers:{
         "Content-Type":"application/json"
     }
@@ -16,7 +16,7 @@ export default function Home()
  const [user,setUser] = useState()
     useEffect(()=>{
         const getData= async()=>{
-            const response = await axios.get('http://localhost:8000/getUser')
+            const response = await axios.get('https://demo-hosting-6snt.onrender.com/getUser')
             setUser(response.data.create)
         }
         getData()
